@@ -52,3 +52,39 @@ Started GET "/posts" for 98.155.218.104 at 2018-07-20 17:42:06 +0000
 Processing by PostsController#index as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
   Rendered posts/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 427ms (Views: 414.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 98.155.218.104 at 2018-07-20 17:42:07 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.155.218.104 at 2018-07-20 17:42:07 +0000
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 98.155.218.104 at 2018-07-20 17:42:07 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.155.218.104 at 2018-07-20 17:42:07 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 98.155.218.104 at 2018-07-20 17:42:07 +0000
+
+
+Started GET "/posts/new" for 98.155.218.104 at 2018-07-20 17:42:16 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 98.155.218.104 at 2018-07-20 17:42:27 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZRfFxh/v6PrK2PJPjM3TNjleLcnMg1SbTk7lFv2o1VjdD9YCSpuuIr0xjEFViKsXQWDI1kSvoTlrDnPuSkWqNw==", "title"=>"test post", "description"=>"some content", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "test post"], ["description", "some content"], ["created_at", "2018-07-20 17:42:27.805986"], ["updated_at", "2018-07-20 17:42:27.805986"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.6ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  app/controllers/posts_controller.rb:15:in `create'
+
+
